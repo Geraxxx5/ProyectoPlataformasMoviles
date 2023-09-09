@@ -5,6 +5,8 @@ import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
@@ -18,10 +20,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -39,8 +45,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
@@ -87,10 +96,76 @@ fun Greeting() {
 
             Text(
                 text = "Contactos", fontFamily = FontFamily.Serif, textAlign = TextAlign.Center,
-                fontSize = 20.sp
+                fontSize = 22.sp
             )
         }
         MainSreen()
+        ContactosList()
+    }
+
+}
+
+data class Contacto(val nombre: String, val imagenResId: Int)
+
+@Composable
+fun ContactosList() {
+
+    val listaDeContactos = listOf(
+        Contacto("Banco Azteca", R.drawable.bancoaztecaaa),
+        Contacto("Banco Banrural", R.drawable.bancobanrural),
+        Contacto("Banco Industrial", R.drawable.bancobi),
+        Contacto("Banco G&T", R.drawable.bancog_t)
+    )
+
+    LazyColumn(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        items(listaDeContactos) { contacto ->
+            ContactoItem(contacto = contacto)
+        }
+    }
+}
+
+@Composable
+fun ContactoItem(contacto: Contacto) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp).background(Color.White),
+        shape = MaterialTheme.shapes.medium,
+
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = contacto.imagenResId),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(60.dp)
+                    .clip(CircleShape)
+                    .background(
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(
+                                Color(0xFFE66FB5),
+                                Color(0xFF6F85E6)
+                            )
+                        )
+                    ),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Text(
+                text = contacto.nombre,
+                style = MaterialTheme.typography.titleMedium,
+                color = Color.Black
+            )
+        }
     }
 }
 
@@ -123,7 +198,7 @@ fun MainSreen(){
                 active = it
             },
             placeholder = {
-                Text(text = "Buscar Contacto")
+                Text(text = "Buscar contacto")
             },
             leadingIcon = {
               Icon(imageVector = Icons.Default.Search, contentDescription = "Search Icon")
