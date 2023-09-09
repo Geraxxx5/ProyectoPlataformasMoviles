@@ -82,7 +82,9 @@ class Contactos : ComponentActivity() {
 fun Greeting() {
     Column {
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
@@ -90,20 +92,26 @@ fun Greeting() {
                 contentDescription = null,
                 tint = Color.Unspecified,
                 modifier = Modifier
-                    .padding(end = 50.dp)
                     .size(40.dp),
             )
 
+            Spacer(modifier = Modifier.width(16.dp))
+
             Text(
-                text = "Contactos", fontFamily = FontFamily.Serif, textAlign = TextAlign.Center,
+                text = "Contactos",
+                fontFamily = FontFamily.Serif,
+                textAlign = TextAlign.Center,
                 fontSize = 22.sp
             )
         }
-        MainSreen()
-        ContactosList()
+
+        MainScreen()
+        Spacer(modifier = Modifier.height(16.dp))
+        ContactosList() 
     }
 
 }
+
 
 data class Contacto(val nombre: String, val imagenResId: Int)
 
@@ -172,7 +180,7 @@ fun ContactoItem(contacto: Contacto) {
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainSreen(){
+fun MainScreen(){
     var text by remember { mutableStateOf("") }
     var active by remember { mutableStateOf(false) }
     var items = remember {
