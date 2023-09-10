@@ -156,8 +156,7 @@ fun ContactoItem(contacto: Contacto) {
             .padding(16.dp)
             .background(Color.White),
         shape = MaterialTheme.shapes.medium,
-        //Cambiar el color de los botenes para que se adecuen mas
-        colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)
+        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD7FFA8))
     ) {
         Row(
             modifier = Modifier

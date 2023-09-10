@@ -76,7 +76,7 @@ fun ContactInformation() {
 fun TopContactInfo(){
     val context = LocalContext.current
     TopAppBar(title = { Text(text = "Informacion") }, colors = topAppBarColors(
-        containerColor = Color.Gray),
+        containerColor = Color(0xFFB6FC65)),
         navigationIcon = {
             IconButton(onClick = {
                 context.startActivity(Intent(context,Contactos::class.java))
