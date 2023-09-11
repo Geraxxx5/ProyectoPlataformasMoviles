@@ -127,10 +127,10 @@ fun Greeting() {
 fun ContactosList() {
 
     val listaDeContactos = listOf(
-        Contacto("Banco Azteca", R.drawable.bancoaztecaaa,"+502 2306 8000"),
-        Contacto("Banco Banrural", R.drawable.bancobanrural,"+502 2339 8888"),
-        Contacto("Banco Industrial", R.drawable.bancobi,"+502 2411 6000"),
-        Contacto("Banco G&T", R.drawable.bancog_t,"1718")
+        Contacto("Banco Azteca", R.drawable.bancoaztecaaa,"+502 2306 8000","Cdad.Guatemala", "7A Avenida 19-28", "Mixco", "6A Calle 4-36","Huehuetenango", "Calz Kaibil Balam" ),
+        Contacto("Banco Banrural", R.drawable.bancobanrural,"+502 2339 8888","Cdad.Guatemala", "Mercado La Villa de Guadalupe", "", "","", ""),
+        Contacto("Banco Industrial", R.drawable.bancobi,"+502 2411 6000","Cdad.Guatemala","Vista Hermosa, Carril Auxiliar","", "","", ""),
+        Contacto("Banco G&T", R.drawable.bancog_t,"1718", "Cdad.Guatemala", "20 Cakke, 25-85 Zona 10 C.C La Pradera","", "","", "")
     )
 
     LazyColumn(

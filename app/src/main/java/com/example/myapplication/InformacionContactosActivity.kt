@@ -45,6 +45,8 @@ import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 var contacto:Contacto? = null
+//var Sede:Contacto? = null
+
 class InformacionContactosActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,20 +143,33 @@ fun ContentContactInfo(){
     Spacer(modifier = Modifier.padding(10.dp))
     Text(text = "Sedes de interes",Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
     Spacer(modifier = Modifier.padding(5.dp))
-    //Se haria un for por cada sede para que muestre algunas
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.fillMaxWidth()) {
-            Text(text = "Sede: Algun lugar")
-            Text(text = "Ubicacion: Cerca de tu corazon")
+            Text(text = "Sede", fontSize = 10.sp)
+            Text(text = contacto!!. sede1)
+            Text(text = "Ubicación", fontSize = 10.sp)
+            Text(text = contacto!!.ubicacion1)
         }
     }
     Spacer(modifier = Modifier.padding(1.dp))
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.fillMaxWidth()) {
-            Text(text = "Sede: Algun lugar")
-            Text(text = "Ubicacion: Cerca de tu corazon")
+            Text(text = "Sede", fontSize = 10.sp)
+            Text(text = contacto!!. sede2)
+            Text(text = "Ubicación", fontSize = 10.sp)
+            Text(text = contacto!!. ubicacion2)
         }
     }
+    Spacer(modifier = Modifier.padding(1.dp))
+    Card(Modifier.fillMaxWidth()) {
+        Column(Modifier.fillMaxWidth()) {
+            Text(text = "Sede", fontSize = 10.sp)
+            Text(text = contacto!!. sede3)
+            Text(text = "Ubicación", fontSize = 10.sp)
+            Text(text = contacto!!. ubicacion3)
+        }
+    }
+
 
 
 }
