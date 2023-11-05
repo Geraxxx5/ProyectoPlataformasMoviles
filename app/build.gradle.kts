@@ -3,16 +3,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-android")
     id ("kotlin-parcelize")
+
 }
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.myapplication"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 34
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -50,7 +51,6 @@ android {
         }
     }
 }
-
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")

@@ -34,14 +34,14 @@ fun Calculadora2(
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             Text(
-                text = state.num1 + (state.operation ?: "") + state.num2,
+                text = state.num1 + (state.operation?.symbol ?: "") + state.num2,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 32.dp),
                 fontWeight = FontWeight.Light,
                 fontSize = 80.sp,
-                color = Color.White,
+                color = Color.Black,
                 maxLines = 2
 
             )
@@ -51,7 +51,7 @@ fun Calculadora2(
             ) {
                 Calculadora1(symbol = "AC",
                     modifier = Modifier
-                        .background(Color.White)
+                        .background( Color(0xFF9EDA9C))
                         .aspectRatio(2f)
                         .weight(2f),
                     onClick = {
@@ -60,16 +60,16 @@ fun Calculadora2(
                 )
                 Calculadora1(symbol = "Del",
                     modifier = Modifier
-                        .background(Color.White)
+                        .background( Color(0xFF9EDA9C))
                         .aspectRatio(1f)
-                        .weight(2f),
+                        .weight(1f),
                     onClick = {
                         onAction(CalculadoraA.Delete)
                     }
                 )
                 Calculadora1(symbol = "/",
                     modifier = Modifier
-                        .background( Color(0xFF14AD24))
+                        .background( Color(0xFF12950E))
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -110,7 +110,7 @@ fun Calculadora2(
                 )
                 Calculadora1(symbol = "x",
                     modifier = Modifier
-                        .background(Color(0xFF14AD24))
+                        .background(Color(0xFF12950E))
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -152,7 +152,7 @@ fun Calculadora2(
                 )
                 Calculadora1(symbol = "-",
                     modifier = Modifier
-                        .background(Color(0xFF14AD24))
+                        .background(Color(0xFF12950E))
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -194,7 +194,7 @@ fun Calculadora2(
                 )
                 Calculadora1(symbol = "+",
                     modifier = Modifier
-                        .background(Color(0xFF14AD24))
+                        .background(Color(0xFF12950E))
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -228,7 +228,7 @@ fun Calculadora2(
 
                 Calculadora1(symbol = "=",
                     modifier = Modifier
-                        .background(Color(0xFF14AD24))
+                        .background(Color(0xFF12950E))
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
