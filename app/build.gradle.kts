@@ -1,9 +1,15 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id ("kotlin-android")
     id ("kotlin-parcelize")
     id("com.google.gms.google-services")
+  //  id ("com.android.application")
+    //id ("com.android.library")
+    //id ("org.jetbrains.kotlin.android")
+   // id ("com.google.dagger.hilt.android")
 
 }
 
@@ -53,7 +59,9 @@ android {
     }
 }
 dependencies {
-
+    implementation ("androidx.compose:compose-runtime:1.1.0")
+    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    implementation ("com.google.dagger:hilt-android:2.38.1")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.activity:activity-compose:1.7.2")
@@ -100,6 +108,8 @@ dependencies {
     implementation ("io.coil-kt:coil-compose:1.4.0")
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+   // implementation ("com.google.dagger:hilt-android:2.38.1")
+
 
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
