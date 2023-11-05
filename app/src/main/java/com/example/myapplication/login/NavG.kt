@@ -13,13 +13,15 @@ fun NavG(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screens.SignUpScreen.route
+        startDestination = Screens.SignInScreen.route
     ) {
         composable(route = Screens.SignInScreen.route) {
             SignInScreen()
+
         }
         composable(route = Screens.SignUpScreen.route) {
-        SignUpScreen()
+            SignUpScreen()
+
         }
     }
 
